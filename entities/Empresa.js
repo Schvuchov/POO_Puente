@@ -1,4 +1,5 @@
 export class Empresa{
+
     _nome
     _cnpj
     _endereco
@@ -11,47 +12,46 @@ export class Empresa{
         this._endereco = ""
         this._email = ""
         this._telefone = ""
-        
     }
 
     getNome(){
-        return this.nome
+        return this._nome
     }
 
     setNome(nome){
-        this.nome = nome
+        this._nome = nome
     }
 
     getCnpj() {
-        return this.cnpj
+        return this._cnpj
     }
 
     setCnpj() {
-        this.cnpj = cnpj
+        this._cnpj = cnpj
     }
 
     getEndereco(){
-        return this.endereco
+        return this._endereco
     }
 
     setEndereco(){
-        this.endereco = endereco
+        this._endereco = endereco
     }
 
     getEmail(){
-        return this.email
+        return this._email
     }
 
     setEmail(){
-        this.email = email
+        this._email = email
     }
 
     getTelefone(){
-        return this.telefone
+        return this._telefone
     }
 
     setTelefone(){
-        this.telefone = telefone
+        this._telefone = telefone
     }
 
 

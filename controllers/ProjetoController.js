@@ -1,12 +1,12 @@
-import { EmpresaService } from '../services/EmpresaService.js'
+import { ProjetoService } from '../services/ProjetoService.js'
 
-export class EmpresaController{
+export class ProjetoController{
 
-    empresaService
+    projetoService
 
     constructor(app){
 
-        this.empresaService = new EmpresaService()
+        this.projetoService = new ProjetoService()
 
         app.get('/health', (req,res) => {
             console.log("Ta rodando!")
@@ -14,13 +14,13 @@ export class EmpresaController{
         })
 
         app.get('/buscar', (req, res) => {
-            let empresa = this.empresaService.buscarEmpresa()
+            let projeto = this.projetoService.buscarProjeto()
 
-            res.send(empresa)    
+            res.send(projeto)    
         })
 
         app.post('add', (req,res) => {
-            this.empresaService.inserirEmpresa(req.body)
+            this.projetoService.inserirProjeto(req.body)
 
             res.status(201).send("Criado com sucesso")
         })

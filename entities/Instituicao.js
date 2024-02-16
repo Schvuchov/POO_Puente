@@ -1,26 +1,57 @@
 export class Instituicao{
 
+    _nome
+    _cnpj
+    _endereco
+    _email
+    _telefone
+
     constructor(){
-        let _nome
-        let _cnpj
-        let _endereco
-        let _email
-        let _telefone
+        this._nome = ""
+        this._cnpj = ""
+        this._endereco = ""
+        this._email = ""
+        this._telefone = ""
+    }
 
-        this.getNome = () => _nome
-        this.setNome = (nome) => _nome = nome 
+    getNome(){
+        return this._nome
+    }
 
-        this.getCnpj = () => _cnpj
-        this.setCnpj = (cnpj) => _cnpj = cnpj 
+    setNome(nome){
+        this._nome = nome
+    }
 
-        this.getEndereco = () => _endereco
-        this.setEndereco = (endereco) => _endereco = endereco 
+    getCnpj() {
+        return this._cnpj
+    }
 
-        this.getEmail = () => _email
-        this.setEmail = (email) => _email = email 
+    setCnpj() {
+        this._cnpj = cnpj
+    }
 
-        this.getTelefone= () => _telefone
-        this.setTelefone = (telefone) => _telefone = telefone
+    getEndereco(){
+        return this._endereco
+    }
+
+    setEndereco(){
+        this._endereco = endereco
+    }
+
+    getEmail(){
+        return this._email
+    }
+
+    setEmail(){
+        this._email = email
+    }
+
+    getTelefone(){
+        return this._telefone
+    }
+
+    setTelefone(){
+        this._telefone = telefone
     }
 
     cadastrarInstituicao(obj){

@@ -1,3 +1,3 @@
-import {Projeto} from './Projeto.js'
-import {Empresa} from './Empresa.js'
-import {Instituicao} from './Instituicao.js'
+import {Projeto} from './entities/Projeto.js'
+import {Empresa} from './entities/Empresa.js'
+import {Instituicao} from './entities/Instituicao.js'

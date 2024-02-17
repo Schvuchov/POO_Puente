@@ -54,5 +54,9 @@ export class Empresa{
         this._telefone = telefone
     }
 
+    exibirEmpresa(){
+        console.log("Empresa "+this.getNome()+" - CNPJ: "+this.getCnpj()+", Endereço: "+this.getEndereco()+", Email: "+this.getEmail()+", Telefone: "+this.getTelefone())
+    }
+
 
 }

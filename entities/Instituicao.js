@@ -54,5 +54,9 @@ export class Instituicao{
         this._telefone = telefone
     }
 
+    exibirInstituicao(){
+        console.log("Instituição "+this.getNome()+" - CNPJ: "+this.getCnpj()+", Endereço: "+this.getEndereco()+", Email: "+this.getEmail()+", Telefone: "+this.getTelefone())
+    }
+
 
 }

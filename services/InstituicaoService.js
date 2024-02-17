@@ -33,4 +33,8 @@ export class InstituicaoService {
         return instituicao;
     }
 
+    deletarInstituicao(instituicao){
+
+    }
+
 }

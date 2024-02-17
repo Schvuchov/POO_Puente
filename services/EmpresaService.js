@@ -21,16 +21,20 @@ export class EmpresaService {
 
     }
 
-    buscarEmpresa(){
+    buscarEmpresa(body){
         let empresa = new Empresa()
 
-        empresa.setNome("bla")
-        empresa.setCnpj("bla")
-        empresa.setEndereco("bla")
-        empresa.setEmail("bla")
-        empresa.setTelefone("bla")
+        empresa.setNome(body.nome)
+        empresa.setCnpj(body.cnpj)
+        empresa.setEndereco(body.endereco)
+        empresa.setEmail(body.email)
+        empresa.setTelefone(body.telefone)
 
         return empresa;
+    }
+
+    deletarEmpresa(empresa){
+
     }
 
 }

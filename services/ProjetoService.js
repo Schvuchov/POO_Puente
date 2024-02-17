@@ -29,4 +29,8 @@ export class ProjetoService {
         return projeto;
     }
 
+    deletarProjeto(projeto){
+
+    }
+
 }

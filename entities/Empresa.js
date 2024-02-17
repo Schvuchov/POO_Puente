@@ -55,14 +55,4 @@ export class Empresa{
     }
 
 
-
-    cadastrarEmpresa(obj){
-        empresa = new Empresa()
-        empresa.setNome(obj.nome)
-        empresa.setCnpj(obj.cnpj)
-        empresa.setEndereco(obj.endereco)
-        empresa.setEmail(obj.email)
-        empresa.setTelefone(obj.telefone)
-    }
-
 }

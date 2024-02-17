@@ -54,13 +54,5 @@ export class Instituicao{
         this._telefone = telefone
     }
 
-    cadastrarInstituicao(obj){
-        instituicao = new Instituicao()
-        instituicao.setNome(obj.nome)
-        instituicao.setCnpj(obj.cnpj)
-        instituicao.setEndereco(obj.endereco)
-        instituicao.setEmail(obj.email)
-        instituicao.setTelefone(obj.telefone)
-    }
 
 }

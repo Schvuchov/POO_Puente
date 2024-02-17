@@ -19,7 +19,7 @@ export class ProjetoController{
             res.send(projeto)    
         })
 
-        app.post('add', (req,res) => {
+        app.post('/add', (req,res) => {
             this.projetoService.inserirProjeto(req.body)
 
             res.status(201).send("Criado com sucesso")

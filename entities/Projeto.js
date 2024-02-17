@@ -34,12 +34,4 @@ export class Projeto{
         this._instituicao = instituicao
     }
 
-
-    cadastrarProjeto(obj){
-        projeto = new Projeto()
-        projeto.setNome(obj.nome)
-        projeto.setDescricao(obj.descricao)
-        projeto.setInstituicao(obj.instituicao)
-        
-    }
 }

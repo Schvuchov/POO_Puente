@@ -7,7 +7,6 @@ export class InstituicaoController {
     constructor(app){
         this.instituicaoService = new InstituicaoService()
 
-
         app.get('/health', (req,res) => {
             console.log("Ta rodando!")
             res.send("ta rodando")
@@ -19,7 +18,7 @@ export class InstituicaoController {
             res.send(instituicao)    
         })
 
-        app.post('add', (req,res) => {
+        app.post('/add', (req,res) => {
             this.instituicaoService.inserirInstituicao(req.body)
 
             res.status(201).send("Criado com sucesso")

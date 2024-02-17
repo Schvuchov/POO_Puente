@@ -19,7 +19,7 @@ export class EmpresaController{
             res.send(empresa)    
         })
 
-        app.post('add', (req,res) => {
+        app.post('/add', (req,res) => {
             this.empresaService.inserirEmpresa(req.body)
 
             res.status(201).send("Criado com sucesso")

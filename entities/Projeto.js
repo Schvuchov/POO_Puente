@@ -1,15 +1,25 @@
 export class Projeto{
 
+    _id
     _nome
     _descricao
     _instituicao
     _categoria
 
     constructor(){
+        this._id = ""
         this._nome = ""
         this._descricao = ""
         this._instituicao = ""
         this._categoria = ""
+    }
+
+    getId(){
+        return this._id
+    }
+
+    setId(id){
+        this._id = id
     }
 
     getNome(){

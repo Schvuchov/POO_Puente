@@ -1,40 +1,39 @@
 import { Empresa } from "../entities/Empresa.js";
+import { Empresa } from "../models/Empresa.js"
 
 export class EmpresaService {
 
     constructor(){
 
     }
+
+    criarEmpresa = async (body) => {
+        const { nome, cnpj, endereco, email, telefone } = req.body
+        const novaEmpresa = { nome, cnpj, endereco, email, telefone }
+        const resultado = await Empresa.create(novaEmpresa)
+        return resultado
+    }
+
+    buscarEmpresas = async (body) => {
+        const empresas = await Empresa.findAll()
+        return empresas
+ 
+    }
+
+    buscarEmpresa = async (id) => {
+        const empresa = await Empresa.findByPk(id)
+        return empresa
+    }
+
+    alterarEmpresa = async (id, body) => {
+        const { nome, cnpj, endereco, email, telefone } = req.body
+        const empresaAtualizada = { nome, cnpj, endereco, email, telefone }
+        const resultado = await Empresa.update(empresaAtualizada, { where: { id: id } })
+        return resultado
+    }
     
-    inserirEmpresa(body){
-        let empresa = new Empresa()
-        empresa.setNome(body.nome)
-        empresa.setCnpj(body.cnpj)
-        empresa.setEndereco(body.endereco)
-        empresa.setEmail(body.email)
-        empresa.setTelefone(body.telefone)
-
-        console.log(empresa.exibirEmpresa())
-    }
-
-    alterarEmpresa(empresa){
-
-    }
-
-    buscarEmpresa(body){
-        let empresa = new Empresa()
-
-        empresa.setNome(body.nome)
-        empresa.setCnpj(body.cnpj)
-        empresa.setEndereco(body.endereco)
-        empresa.setEmail(body.email)
-        empresa.setTelefone(body.telefone)
-
-        return empresa;
-    }
-
-    deletarEmpresa(empresa){
-
+    deletarEmpresa = async (id) => {
+        await Empresa.destroy({ where: { id: id } })
     }
 
 }

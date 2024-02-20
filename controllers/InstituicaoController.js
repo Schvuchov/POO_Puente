@@ -23,5 +23,15 @@ export class InstituicaoController {
 
             res.status(201).send("Criado com sucesso")
         })
+
+        app.put('/alterar/:id', (req,res) => {
+            this.projetoService.alterarProjeto(req.params.id, req.body)
+            res.status(200).send("Projeto atualizado")
+        })
+
+        app.delete('/deletar/:id', (req,res) => {
+            this.projetoService.deletarProjeto(req.params.id)
+            
+        })
     }
 }

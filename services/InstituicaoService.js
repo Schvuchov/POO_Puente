@@ -17,23 +17,25 @@ export class InstituicaoService {
         console.log(instituicao.exibirInstituicao())
     }
 
-    alterarInstituicao(instituicao){
+    
 
-    }
-
-    buscarInstituicao(){
+    buscarInstituicao(body){
         let instituicao = new Instituicao()
 
-        instituicao.setNome("bla")
-        instituicao.setCnpj("bla")
-        instituicao.setEndereco("bla")
-        instituicao.setEmail("bla")
-        instituicao.setTelefone("bla")
+        instituicao.setNome(body.nome)
+        instituicao.setCnpj(body.cnpj)
+        instituicao.setEndereco(body.endereco)
+        instituicao.setEmail(body.email)
+        instituicao.setTelefone(body.telefone)
 
         return instituicao;
     }
 
-    deletarInstituicao(instituicao){
+    alterarInstituicao(id,body){
+
+    }
+
+    deletarInstituicao(id){
 
     }
 

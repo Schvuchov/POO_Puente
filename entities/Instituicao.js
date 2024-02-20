@@ -1,5 +1,6 @@
 export class Instituicao{
 
+    _id
     _nome
     _cnpj
     _endereco
@@ -7,11 +8,20 @@ export class Instituicao{
     _telefone
 
     constructor(){
+        this._id = ""
         this._nome = ""
         this._cnpj = ""
         this._endereco = ""
         this._email = ""
         this._telefone = ""
+    }
+
+    getId(){
+        return this._id
+    }
+
+    setId(id){
+        this._id = id
     }
 
     getNome(){
@@ -26,7 +36,7 @@ export class Instituicao{
         return this._cnpj
     }
 
-    setCnpj() {
+    setCnpj(cnpj) {
         this._cnpj = cnpj
     }
 
@@ -34,7 +44,7 @@ export class Instituicao{
         return this._endereco
     }
 
-    setEndereco(){
+    setEndereco(endereco){
         this._endereco = endereco
     }
 
@@ -42,7 +52,7 @@ export class Instituicao{
         return this._email
     }
 
-    setEmail(){
+    setEmail(email){
         this._email = email
     }
 
@@ -50,7 +60,7 @@ export class Instituicao{
         return this._telefone
     }
 
-    setTelefone(){
+    setTelefone(telefone){
         this._telefone = telefone
     }
 

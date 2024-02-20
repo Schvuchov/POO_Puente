@@ -15,11 +15,7 @@ export class ProjetoService {
         console.log(projeto.exibirProjeto())
     }
 
-    alterarProjeto(projeto){
-
-    }
-
-    buscarProjeto(){
+    buscarProjeto(body){
         let projeto = new Projeto()
 
         projeto.setNome(body.nome)
@@ -29,7 +25,12 @@ export class ProjetoService {
         return projeto;
     }
 
-    deletarProjeto(projeto){
+    alterarProjeto(id, body){
+        const indiceRecebido = id
+        
+    }
+
+    deletarProjeto(id){
 
     }
 

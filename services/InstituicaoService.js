@@ -1,4 +1,5 @@
 import { Instituicao } from "../entities/Instituicao.js";
+import { Instituicao } from "../models/Instituicao.js"
 
 export class InstituicaoService {
 
@@ -6,37 +7,32 @@ export class InstituicaoService {
 
     }
     
-    inserirInstituicao(body){
-        let instituicao = new Instituicao()
-        instituicao.setNome(body.nome)
-        instituicao.setCnpj(body.cnpj)
-        instituicao.setEndereco(body.endereco)
-        instituicao.setEmail(body.email)
-        instituicao.setTelefone(body.telefone)
-
-        console.log(instituicao.exibirInstituicao())
+    criarInstituicao = async (body) => {
+        const { nome, cnpj, endereco, email, telefone } = body
+        const novaInstituicao = { nome, cnpj, endereco, email, telefone }
+        const resultado = await Instituicao.create(novaInstituicao)
+        return resultado
     }
 
-    
-
-    buscarInstituicao(body){
-        let instituicao = new Instituicao()
-
-        instituicao.setNome(body.nome)
-        instituicao.setCnpj(body.cnpj)
-        instituicao.setEndereco(body.endereco)
-        instituicao.setEmail(body.email)
-        instituicao.setTelefone(body.telefone)
-
-        return instituicao;
+    buscarInstituicoes = async () => {
+        const instituicoes = await Instituicao.findAll()
+        return instituicoes
     }
 
-    alterarInstituicao(id,body){
-
+    buscarInstituicao = async (id) => {
+        const instituicao = await Instituicao.findByPk(id)
+        return instituicao
     }
 
-    deletarInstituicao(id){
+    alterarInstituicao = async (id,body) => {
+        const { nome, cnpj, endereco, email, telefone } = body
+        const instituicaoAtualizada = { nome, cnpj, endereco, email, telefone }
+        const resultado = await Instituicao.update(instituicaoAtualizada, { where: { id: id } })
+        return resultado
+    }
 
+    deletarInstituicao = async (id) => {
+        await Instituicao.destroy({ where: { id: id } })
     }
 
 }

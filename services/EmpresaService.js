@@ -8,13 +8,13 @@ export class EmpresaService {
     }
 
     criarEmpresa = async (body) => {
-        const { nome, cnpj, endereco, email, telefone } = req.body
+        const { nome, cnpj, endereco, email, telefone } = body
         const novaEmpresa = { nome, cnpj, endereco, email, telefone }
         const resultado = await Empresa.create(novaEmpresa)
         return resultado
     }
 
-    buscarEmpresas = async (body) => {
+    buscarEmpresas = async () => {
         const empresas = await Empresa.findAll()
         return empresas
  
@@ -26,7 +26,7 @@ export class EmpresaService {
     }
 
     alterarEmpresa = async (id, body) => {
-        const { nome, cnpj, endereco, email, telefone } = req.body
+        const { nome, cnpj, endereco, email, telefone } = body
         const empresaAtualizada = { nome, cnpj, endereco, email, telefone }
         const resultado = await Empresa.update(empresaAtualizada, { where: { id: id } })
         return resultado

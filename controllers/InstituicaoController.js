@@ -12,26 +12,35 @@ export class InstituicaoController {
             res.send("ta rodando")
         })
 
+        //buscar instituicao
         app.get('/buscar', (req, res) => {
-            let instituicao = this.instituicaoService.buscarInstituicao()
-
-            res.send(instituicao)    
+            instituicoes = this.instituicaoService.buscarInstituicoes()
+            res.status(200).send({ message: "Instituições encontradas", data: instituicoes })   
         })
 
+        //buscar instituicao pelo id
+        app.get('/buscar/:id', (req, res) => {
+            instituicao = this.instituicaoService.buscarInstituicao(req.params.id)
+            res.status(200).send({ message: "Instituição encontrada", data: instituicao })
+   
+        })
+
+        //criar instituicao 
         app.post('/add', (req,res) => {
-            this.instituicaoService.inserirInstituicao(req.body)
-
-            res.status(201).send("Criado com sucesso")
+            resultado = this.instituicaoService.criarInstituicao(req.body)
+            res.status(201).send({ message: 'Instituição criada com sucesso', data: resultado })
         })
 
+        //alterar instituicao
         app.put('/alterar/:id', (req,res) => {
-            this.projetoService.alterarProjeto(req.params.id, req.body)
-            res.status(200).send("Projeto atualizado")
+            resultado = this.instituicaoService.alterarInstituicao(req.params.id, req.body)
+            res.status(200).send({ message: 'Instituição atualizada', resultado: resultado })
         })
 
+        //deletar instituicao
         app.delete('/deletar/:id', (req,res) => {
-            this.projetoService.deletarProjeto(req.params.id)
-            
+            this.instituicaoService.deletarInstituicao(req.params.id)
+            res.status(200).send({ message: 'Instituicao excluida' })
         })
     }
 }
